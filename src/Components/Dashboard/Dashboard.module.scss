@@ -1,0 +1,264 @@
+.container{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        .Content{
+            width: 50%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            flex-direction: column;
+            
+            .ContentContainer{
+                width: 75%;
+                h1{
+                    font-size: 35px;
+                    font-weight: 400;
+                    line-height: 60px;
+                    
+                }
+
+              
+
+                
+                .contentButton{
+                    letter-spacing: 2px;
+                    color: orangered;
+                    outline: 2px solid orangered;
+                    border: none;
+                    padding: 30px 60px;
+                    position: relative;
+                    overflow: hidden;
+                    transition: color 1s;
+                    background: transparent;
+                    font-size: 20px;
+                    font-weight: bold;
+                    z-index: 3;
+                    display: flex;
+                    
+                   
+                    
+                    &:hover{
+                        color: black;
+                        z-index: 3;
+                        
+                    }
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: -50px;
+                        width: 0;
+                        height: 100%;
+                        background: #ff4500;
+                        transform: skewX(35deg);
+                        z-index: -1;
+                        transition: width 1s;
+                        margin: auto 0;
+                    }
+                    &:hover::before{
+                        width: 150%;
+                    }
+                    
+                }
+                
+            }
+        }
+            .ImageContainer{
+        width: 50%;
+        min-height: 92vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .Image{
+            background-size: contain;
+            width: 100% ;
+            min-height: 92vh;
+      background-repeat: no-repeat;
+            background-image: url('../../Assets/animat.svg');
+            background-attachment: fixed;
+            background-position-x: right !important;
+            image-rendering: auto;
+            image-rendering: crisp-edges;
+            image-rendering: pixelated;
+            /* Safari seems to support, but seems deprecated and does the same thing as the others. */
+            image-rendering: -webkit-optimize-contrast;
+    
+            background-position: bottom;
+        }
+        
+       
+  }
+  .mouse{
+      width: 25px ;
+      height: 50px;
+      border: 2px solid black;
+      border-radius: 20px;
+      display: flex;
+      margin: 0 auto;
+      .mouseWheel{
+          display: block;
+          width: 10px ;
+          height: 10px;
+          background: black;
+          border-radius: 50%;
+          margin: auto;
+          animation: move-wheel 1s linear infinite;
+          
+        }
+        
+        @keyframes move-wheel {
+          0%{
+              opacity: 0;
+              transform: translateY(-1rem);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(1rem);
+            }
+            
+        }
+    }
+}
+
+}
+@media screen and (max-width : 1000px) {
+    .container{
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        .row{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            flex-direction: column;
+            .Content{
+                width: 100% !important;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                flex-direction: column;
+                
+                .ContentContainer{
+                    width: 90% !important;
+                    text-align: center;
+                    margin: 0 auto;
+                    h1{
+                        font-size: 30px !important;
+                        font-weight: 800;
+                        line-height: 60px;
+                        
+                    }
+                    
+                    .contentButton{
+                        letter-spacing: 2px;
+                        color: orangered;
+                        outline: 2px solid orangered;
+                        border: none;
+                        padding: 15px 30px;
+                        position: relative;
+                        overflow: hidden;
+                        transition: color 1s;
+                        background: transparent;
+                        font-size: 20px;
+                        font-weight: bold;
+                        z-index: 3;
+                        display: flex;
+                        margin: 0 auto;
+                        
+                        
+                        
+                        &:hover{
+                            color: black;
+                            z-index: 3;
+                            
+                        }
+                        &::before{
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: -50px;
+                            width: 0;
+                            height: 100%;
+                            background: #ff4500;
+                            transform: skewX(35deg);
+                            z-index: -1;
+                            transition: width 1s;
+                            margin: auto 0;
+                        }
+                        &:hover::before{
+                            width: 150%;
+                        }
+                        
+                    }
+                    
+                }
+            }
+                .ImageContainer{
+            width: 100%;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .Image{
+                background-size: contain;
+                width: 100% ;
+                min-height: 92vh;
+          background-repeat: no-repeat;
+                background-image: url('../../Assets/Payment Information-bro.png');
+                background-attachment: fixed;
+                background-position-x: right !important;
+                background-position-y: bottom !important;
+        
+                background-position: bottom;
+            }
+            
+           
+      }
+      .mouse{
+          width: 25px ;
+          height: 50px;
+          border: 2px solid black;
+          border-radius: 20px;
+          display: flex;
+          margin: 0 auto;
+          .mouseWheel{
+              display: block;
+              width: 10px ;
+              height: 10px;
+              background: black;
+              border-radius: 50%;
+              margin: auto;
+              animation: move-wheel 1s linear infinite;
+              
+            }
+            
+            @keyframes move-wheel {
+              0%{
+                  opacity: 0;
+                  transform: translateY(-1rem);
+                }
+                100%{
+                    opacity: 1;
+                    transform: translateY(1rem);
+                }
+                
+            }
+        }
+    }
+    
+    }
+    
+}

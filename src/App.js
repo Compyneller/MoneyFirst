@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import "./App.scss";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import AOS from "aos";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "aos/dist/aos.css";
+import PrivacyPolicy from "./Pages/PrivacyPolicy";
+import NavBar from "./Components/NavBar/NavBar";
+import Footer from "./Components/Footer/Footer";
+import Refund from "./Pages/Refund";
+import TermAndCondition from "./Pages/TermAndCondition";
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/refund" element={<Refund />} />
+          <Route path="/term" element={<TermAndCondition />} />
+        </Routes>
+        <div className="Footer">
+          <Footer />
+        </div>
+      </Router>
     </div>
   );
 }
